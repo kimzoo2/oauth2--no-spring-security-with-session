@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:oauth-no-spring-security
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /h2-console         # H2 접속 경로
+      settings:
+        web-allow-others: true  # H2 외부 접속 허용 여부
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            loggerLevel: basic
